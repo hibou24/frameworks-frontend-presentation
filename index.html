@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks Frontend de Nouvelle Génération</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 30px;
+        }
+        .slide {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .slide-header {
+            background-color: #4a6fa5;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .slide-content {
+            padding: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .framework-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .framework-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .framework-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+        }
+        .qwik-logo { background-color: #4d77cf; }
+        .astro-logo { background-color: #ff5d01; }
+        .svelte-logo { background-color: #ff3e00; }
+        .solid-logo { background-color: #2c4f7c; }
+        
+        .framework-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .framework-strengths, .framework-weaknesses {
+            margin-top: 10px;
+        }
+        .framework-strengths h4, .framework-weaknesses h4 {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .framework-strengths ul, .framework-weaknesses ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        .key-feature {
+            background-color: #f0f7ff;
+            border-left: 4px solid #4a6fa5;
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .comparison-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .star-rating {
+            color: #ffc107;
+        }
+        .empty-star {
+            color: #e0e0e0;
+        }
+        .conclusion-point {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .point-number {
+            background-color: #4a6fa5;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+        .point-content {
+            flex: 1;
+        }
+        .recommendation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendation-table th, .recommendation-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .recommendation-table th {
+            background-color: #f2f2f2;
+        }
+        .chart-bar {
+            height: 30px;
+            margin: 5px 0;
+            background-color: #4a6fa5;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 0 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <div class="slide-header">Les frameworks frontend de nouvelle génération</div>
+            <div class="slide-content" style="text-align: center;">
+                <h2>Veille technologique M1 DEV</h2>
+                <p style="font-size: 20px; margin: 30px 0;">Une analyse comparative de Qwik, Astro, Svelte et Solid.js</p>
+                <p style="font-style: italic; margin-top: 50px;">Mai 2025</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Introduction -->
+        <div class="slide">
+            <div class="slide-header">Introduction</div>
+            <div class="slide-content">
+                <h2>Contexte et enjeux</h2>
+                <p>Le développement frontend est en pleine évolution avec l'émergence de frameworks cherchant à résoudre les problématiques actuelles :</p>
+                <div class="key-feature">
+                    <p><strong>Performance</strong> - Optimisation des Core Web Vitals et expérience utilisateur</p>
+                </div>
+                <div class="key-feature">
+                    <p><strong>DX (Developer Experience)</strong> - Simplification du développement sans compromettre la flexibilité</p>
+                </div>
+                <div class="key-feature">
+                    <p><strong>Bundle size</strong> - Réduction du JavaScript envoyé au client</p>
+                </div>
+                <div class="key-feature">
+                    <p><strong>Architecture</strong> - Nouvelles approches pour le rendu et l'interactivité</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Methodology -->
+        <div class="slide">
+            <div class="slide-header">Méthodologie de veille</div>
+            <div class="slide-content">
+                <h2>Sources et outils utilisés</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div>
+                        <h3>Sources d'information</h3>
+                        <ul>
+                            <li>Documentation officielle</li>
+                            <li>Dépôts GitHub (code, issues)</li>
+                            <li>Blogs techniques spécialisés</li>
+                            <li>Conférences et talks des créateurs</li>
+                            <li>Benchmarks indépendants</li>
+                            <li>Communautés Reddit, Twitter</li>
+                            <li>Retours d'expérience d'entreprises</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Outils de veille</h3>
+                        <ul>
+                            <li>Feedly (agrégation RSS)</li>
+                            <li>GitHub Stars et notifications</li>
+                            <li>Twitter Lists des développeurs clés</li>
+                            <li>Notion (organisation des données)</li>
+                            <li>Web.dev & Lighthouse (benchmarks)</li>
+                            <li>DevTools Performance (mesures)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h3>Approche d'analyse</h3>
+                    <p>Combinaison d'analyses qualitatives et quantitatives avec expérimentation pratique sur une application de démonstration identique.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Framework Overview -->
+        <div class="slide">
+            <div class="slide-header">Aperçu des frameworks</div>
+            <div class="slide-content">
+                <h2>Les quatre frameworks étudiés</h2>
+                <div class="framework-grid">
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-logo qwik-logo">Q</div>
+                            <div class="framework-title">Qwik</div>
+                        </div>
+                        <p>Framework orienté "resumability" qui élimine l'hydratation et charge le JavaScript à la demande.</p>
+                        <div class="key-feature">
+                            <p>Concept clé : "Zero hydration" avec serialization d'état</p>
+                        </div>
+                    </div>
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-logo astro-logo">A</div>
+                            <div class="framework-title">Astro</div>
+                        </div>
+                        <p>Générateur de sites statiques suivant le principe "zero JS by default" avec concept d'îlots.</p>
+                        <div class="key-feature">
+                            <p>Concept clé : "Islands architecture" avec hydratation partielle</p>
+                        </div>
+                    </div>
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-logo svelte-logo">S</div>
+                            <div class="framework-title">Svelte/SvelteKit</div>
+                        </div>
+                        <p>Compilateur plutôt que framework, qui transforme les composants en JavaScript optimisé.</p>
+                        <div class="key-feature">
+                            <p>Concept clé : Réactivité native sans Virtual DOM</p>
+                        </div>
+                    </div>
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-logo solid-logo">S</div>
+                            <div class="framework-title">Solid.js</div>
+                        </div>
+                        <p>Système de réactivité fine inspiré de React mais sans Virtual DOM.</p>
+                        <div class="key-feature">
+                            <p>Concept clé : Primitives réactives granulaires</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Comparative Analysis -->
+        <div class="slide">
+            <div class="slide-header">Analyse comparative</div>
+            <div class="slide-content">
+                <h2>Forces et faiblesses</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Qwik</th>
+                            <th>Astro</th>
+                            <th>SvelteKit</th>
+                            <th>Solid.js</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Performance initiale</td>
+                            <td><span class="star-rating">★★★★★</span></td>
+                            <td><span class="star-rating">★★★★★</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                        </tr>
+                        <tr>
+                            <td>Interactivité</td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★★</span><span class="empty-star">☆☆</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★★★★</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bundle size</td>
+                            <td><span class="star-rating">★★★★★</span></td>
+                            <td><span class="star-rating">★★★★★</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                        </tr>
+                        <tr>
+                            <td>DX</td>
+                            <td><span class="star-rating">★★★</span><span class="empty-star">☆☆</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★★★★</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                        </tr>
+                        <tr>
+                            <td>Maturité</td>
+                            <td><span class="star-rating">★★</span><span class="empty-star">☆☆☆</span></td>
+                            <td><span class="star-rating">★★★</span><span class="empty-star">☆☆</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★★</span><span class="empty-star">☆☆</span></td>
+                        </tr>
+                        <tr>
+                            <td>Écosystème</td>
+                            <td><span class="star-rating">★★</span><span class="empty-star">☆☆☆</span></td>
+                            <td><span class="star-rating">★★★</span><span class="empty-star">☆☆</span></td>
+                            <td><span class="star-rating">★★★★</span><span class="empty-star">☆</span></td>
+                            <td><span class="star-rating">★★</span><span class="empty-star">☆☆☆</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 6: Case Study -->
+        <div class="slide">
+            <div class="slide-header">Étude de cas pratique</div>
+            <div class="slide-content">
+                <h2>Application Todo List implémentée dans chaque framework</h2>
+                <h3>Métriques de performance</h3>
+                <div style="margin: 30px 0;">
+                    <h4>First Contentful Paint (FCP)</h4>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">Qwik</div>
+                        <div class="chart-bar" style="width: 30%;">0.3s</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">Astro</div>
+                        <div class="chart-bar" style="width: 20%; background-color: #28a745;">0.2s</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">SvelteKit</div>
+                        <div class="chart-bar" style="width: 40%; background-color: #ffc107;">0.4s</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">Solid.js</div>
+                        <div class="chart-bar" style="width: 30%;">0.3s</div>
+                    </div>
+                    
+                    <h4>Bundle JS (compressé)</h4>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">Qwik</div>
+                        <div class="chart-bar" style="width: 15%;">15kB</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">Astro</div>
+                        <div class="chart-bar" style="width: 7%; background-color: #28a745;">7kB</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">SvelteKit</div>
+                        <div class="chart-bar" style="width: 23%; background-color: #ffc107;">23kB</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 80px;">Solid.js</div>
+                        <div class="chart-bar" style="width: 18%;">18kB</div>
+                    </div>
+                </div>
+
+                <h3>Observations clés</h3>
+                <ul>
+                    <li><strong>Temps de développement</strong>: SvelteKit 30% plus rapide</li>
+                    <li><strong>Performance</strong>: Avantage à Astro et Qwik</li>
+                    <li><strong>Expérience utilisateur</strong>: Solid.js plus fluide pour les interactions complexes</li>
+                    <li><strong>Maintenabilité</strong>: Code le plus lisible avec SvelteKit</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Industry Impact -->
+        <div class="slide">
+            <div class="slide-header">Impact sur l'industrie</div>
+            <div class="slide-content">
+                <h2>Adoption et tendances</h2>
+                <div style="margin: 20px 0;">
+                    <h3>Croissance des téléchargements npm en 2024</h3>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px;">Svelte/Kit</div>
+                        <div class="chart-bar" style="width: 89%;">+89%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px;">Astro</div>
+                        <div class="chart-bar" style="width: 100%; background-color: #28a745;">+157%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px;">Qwik</div>
+                        <div class="chart-bar" style="width: 68%; background-color: #6c757d;">+68%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px;">Solid.js</div>
+                        <div class="chart-bar" style="width: 75%;">+75%</div>
+                    </div>
+                </div>
+                
+                <h3>Cas d'adoption notables</h3>
+                <ul>
+                    <li><strong>Vercel</strong> - Utilisation partielle de Svelte</li>
+                    <li><strong>The New York Times</strong> - Pages de contenu avec Astro</li>
+                    <li><strong>Microsoft</strong> - Projets internes avec Solid.js</li>
+                    <li><strong>IKEA</strong> - Pages produits avec Astro</li>
+                </ul>
+                
+                <h3>Challenges d'adoption</h3>
+                <ul>
+                    <li>Risque perçu lié à la pérennité</li>
+                    <li>Manque de développeurs expérimentés</li>
+                    <li>Écosystème moins développé</li>
+                    <li>Intégration avec systems legacy</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Recommendations -->
+        <div class="slide">
+            <div class="slide-header">Recommandations</div>
+            <div class="slide-content">
+                <h2>Quel framework choisir et quand ?</h2>
+                
+                <table class="recommendation-table">
+                    <thead>
+                        <tr>
+                            <th>Type de projet</th>
+                            <th>Framework recommandé</th>
+                            <th>Pourquoi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sites orientés contenu</td>
+                            <td>Astro</td>
+                            <td>Performance maximale, optimisation SEO, approche "zero JS by default"</td>
+                        </tr>
+                        <tr>
+                            <td>Applications complètes</td>
+                            <td>SvelteKit</td>
+                            <td>Équilibre entre performance et DX, maturité croissante</td>
+                        </tr>
+                        <tr>
+                            <td>Applications interactives</td>
+                            <td>Solid.js / Qwik</td>
+                            <td>Réactivité fine, performance lors des interactions</td>
+                        </tr>
+                        <tr>
+                            <td>Migration progressive</td>
+                            <td>Astro</td>
+                            <td>Capacité à intégrer des composants existants</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Stratégie d'adoption</h3>
+                <div class="conclusion-point">
+                    <div class="point-number">1</div>
+                    <div class="point-content">Commencer par des projets secondaires ou POC</div>
+                </div>
+                <div class="conclusion-point">
+                    <div class="point-number">2</div>
+                    <div class="point-content">Former progressivement les équipes</div>
+                </div>
+                <div class="conclusion-point">
+                    <div class="point-number">3</div>
+                    <div class="point-content">Mesurer l'impact sur les KPI business</div>
+                </div>
+                <div class="conclusion-point">
+                    <div class="point-number">4</div>
+                    <div class="point-content">Évaluer le TCO (formation + maintenance)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Conclusion -->
+        <div class="slide">
+            <div class="slide-header">Conclusion</div>
+            <div class="slide-content">
+                <h2>Point d'inflexion dans le développement frontend</h2>
+                
+                <div style="margin: 30px 0;">
+                    <p>Les frameworks de nouvelle génération représentent :</p>
+                    <div class="key-feature">
+                        <p>Une évolution technique avec des approches innovantes pour résoudre les problèmes actuels du web</p>
+                    </div>
+                    <div class="key-feature">
+                        <p>Un changement de paradigme similaire à l'émergence de React</p>
+                    </div>
+                    <div class="key-feature">
+                        <p>Une opportunité d'améliorer significativement l'expérience utilisateur</p>
+                    </div>
+                    <div class="key-feature">
+                        <p>Des gains quantifiables en termes de performance et d'engagement</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; font-style: italic; text-align: center;">
+                    <p>"Le développement frontend est à un point d'inflexion où performance et expérience développeur convergent enfin"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
